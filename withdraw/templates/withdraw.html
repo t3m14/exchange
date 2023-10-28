@@ -1,0 +1,43 @@
+
+{%include 'base.html'%}
+
+<div class="container-fluid col-3 ">
+    <form class="border p-5" action="/" method="POST">
+        {% csrf_token %}
+        <h3>Withdraw Money</h3>
+        <div class="input-group mb-3">
+
+            <span class="input-group-text">RDW</span>
+            <span class="input-group-text">{{rdw}}</span>
+            <input type="text" name="rdw1" id="rdw" class="form-control" placeholder="Amount"
+                aria-label="" required>
+        </div>
+        <div class="dropdown-center text-center">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              TaiWallet
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Action two</a></li>
+              <li><a class="dropdown-item" href="#">Action three</a></li>
+            </ul>
+          </div>
+          <div class="dropdown-center text-center p-2">
+            <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+              Currency
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Action two</a></li>
+              <li><a class="dropdown-item" href="#">Action three</a></li>
+            </ul>
+          </div>
+        <div class="input-group pt-3 mb-3">
+            <input type="text" class="form-control" name="wallet" id="wallet" placeholder="RDW wallet" required>
+        </div>
+        <div class="row text-center">
+
+            <button type="submit" class="btn btn-primary">Exchange</button>
+        </div>
+    </form>
+</div>

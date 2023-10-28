@@ -1,0 +1,14 @@
+{% include "base.html" %}
+<div class="container-fluid col-3 text-center">
+
+<p> The verification code was sended on <span class="font-monospace text-bg-secondary border">{{username}}</span>, please enter it bellow</p>
+<form class="border p-5" action="/login/verify/documents/" method="POST">
+    {% csrf_token %}
+    <div class="mb-3">
+    <label for="exampleInputConfirmation1" class="form-label">Confirmation code</label>
+    <input type="text" class="form-control" name="exampleInputConfirmation1" id="exampleInputConfirmation1" aria-describedby="exampleInputConfirmation1">
+    <div id="emailHelp" class="form-text">Please don't show this code with anyone else.</div>
+    </div>
+    <button type="submit" class="btn btn-primary" >Submit</button>
+</form>
+</div>  

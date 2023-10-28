@@ -1,0 +1,11 @@
+{% include "base.html" %}
+<div class="container-fluid col-3 text-center">
+    <form class="border p-5" action="/" method="POST">
+        {% csrf_token %}
+        <label for="formFileLg" class="form-label">Please load your passport image</label>
+        <input class="form-control form-control-lg" id="formFileLg" type="file">
+        <button type="submit" class="btn btn-primary mt-3" >Submit</button>
+
+      </div>
+    </form>
+</div>  

@@ -1,0 +1,33 @@
+{% include "base.html" %}
+
+<body class="">
+    <div class="container-fluid col-3 ">
+        <form class="border p-5" action="/" method="POST">
+            {% csrf_token %}
+
+            <div class="mb-3 ">
+                <label for="exampleInputUsername1" class="form-label">Username</label>
+                <input type="text" class="form-control" name="exampleInputUsername1" id="exampleInputEmail1"
+                    aria-describedby="usernameHelp">
+            </div>
+
+            <div class="mb-3">
+                <label for="inputPassword" class="form-label">Password</label>
+                <input type="password" class="form-control" name="inputPassword" id="inputPassword">
+            </div>
+            <div class="mb-3 form-check">
+                <input type="checkbox" class="form-check-input" name="exampleCheck1" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Dont log out</label>
+            </div>
+            <div class="row text-center">
+
+            <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+
+            <div class="row">
+            <a href="/login/register/">No account yet?</a>
+            <a href="/login/register/">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+</body>
