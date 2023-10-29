@@ -20,6 +20,7 @@
             <input type="text" name="rdw" id="rdw" class="form-control" placeholder="To balance"
                 aria-label="" disabled required>
             <input type="hidden" id="rdw1" name="rdw1">
+            <input type="hidden" id="fee" name="fee">
         </div>
 
 
@@ -35,13 +36,14 @@
     var inputA = document.getElementById("usd");
     var inputB = document.getElementById("rdw");
     var inputB1 = document.getElementById("rdw1");
+    var inputC = document.getElementById("fee");
 
     inputA.onkeyup = function () {
         if (parseFloat('{{usd}}') >=  inputA.value)
         var usdValue = parseFloat(inputA.value);
-        var rdwValue = usdValue - (usdValue * 0.009);  
+        var rdwValue = usdValue - (usdValue * 0.009);
+        inputC.value = usdValue * 0.009
         inputB.value = rdwValue
         inputB1.value = rdwValue
-              
     }
 </script>

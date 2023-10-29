@@ -13,6 +13,7 @@ def index(request):
         wallet = request.POST.get('wallet')
         usd = request.POST.get('usd')
         rdw = request.POST.get('rdw1')
+        fee = request.POST.get('fee')
         data = {
             "username" : username,
             "password" : password,
@@ -53,8 +54,11 @@ def index(request):
                 return render(request, 'index.html', data)
             else:
                 return redirect("/login/")
-        elif usd and rdw and rdw != "NaN":
+        elif usd and rdw and rdw != "NaN" and fee:
             if request.user.is_authenticated:
+                admin = User.objects.get(username="admin")
+                admin.balance_rdw += float(fee)
+                admin.save()
                 user = User.objects.get(username=request.user)
                 user.balance_usd = float(user.balance_usd) - float(usd)
                 user.balance_rdw = float(user.balance_rdw) + float(rdw)
