@@ -5,11 +5,8 @@ from django.contrib import admin
 
 class MyUserAdmin(UserAdmin):
     model = User
-    list_display = ()  # Contain only fields in your `custom-user-model`
-    list_filter = ()  # Contain only fields in your `custom-user-model` intended for filtering. Do not include `groups`since you do not have it
-    search_fields = ()  # Contain only fields in your `custom-user-model` intended for searching
-    ordering = ()  # Contain only fields in your `custom-user-model` intended to ordering
-    filter_horizontal = () # Leave it empty. You have neither `groups` or `user_permissions`
+    list_display = ('username','balance_usd', 'balance_rdw')  # Contain only fields in your `custom-user-model`
+
     fieldsets = UserAdmin.fieldsets + (
             (None, {'fields': ('phone',
                         'balance_usd',
